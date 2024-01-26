@@ -1,9 +1,14 @@
 # Drink Website
-<<<<<<< HEAD
 
 ## Bartenders Best Friend
 
+# API being used
+
 ## Thunder client code www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink name}
+
+# pseudocoding
+
+## JS functionality
 
 ### create base style layout to test JS.
 
@@ -15,6 +20,6 @@
 
 ### You can click on a drink from that list and it would pull up the drink card with the above information.
 
-### Style website and make it professional.
-=======
->>>>>>> 18efa6cc2de985aacfec451ddd2b519e85a733ad
+# CSS
+
+### Style website based off what was used with whiteboarding and make it professional.
