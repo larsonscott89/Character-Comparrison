@@ -1,4 +1,5 @@
 # Drink Website
+<<<<<<< HEAD
 
 ## Bartenders Best Friend
 
@@ -15,3 +16,5 @@
 ### You can click on a drink from that list and it would pull up the drink card with the above information.
 
 ### Style website and make it professional.
+=======
+>>>>>>> 18efa6cc2de985aacfec451ddd2b519e85a733ad
