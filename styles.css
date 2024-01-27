@@ -1,0 +1,110 @@
+body {
+  background-color: darkolivegreen;
+}
+
+.drink-card {
+  width: 700px;
+  height: 550px;
+  background-color: blueviolet;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+#textInput {
+  display: flex;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  margin: 100px 0px 0px 500px;
+}
+
+#submitButton {
+  width: 110px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 10px 0px 0px 550px;
+  font-size: 17px;
+}
+
+.drink-name {
+  font-size: 40px;
+  color: black;
+  display: flex;
+  position: absolute;
+  margin: 0px 0px 0px 20px;
+}
+
+.drink-picture {
+  width: 250px;
+  height: 250px;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px 0px 20px;
+}
+
+.ingredients1 {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin: 50px 0px 0px 300px;
+}
+
+.ingredients2 {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin: 80px 0px 0px 300px;
+}
+
+.ingredients3 {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin: 110px 0px 0px 300px;
+}
+
+.ingredients4 {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin: 140px 0px 0px 300px;
+}
+
+.ingredients5 {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin: 170px 0px 0px 300px;
+}
+
+.ingredients6 {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin: 200px 0px 0px 300px;
+}
+
+.ingredients7 {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin: 230px 0px 0px 300px;
+}
+
+.ingredients8 {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin: 260px 0px 0px 300px;
+}
+
+
+.instructions {
+  font-size: 25px;
+  width: 660px;
+  display: flex;
+  position: absolute;
+  margin: 330px 0px 0px 20px;
+}
