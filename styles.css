@@ -1,5 +1,6 @@
 body {
-  background-color: darkolivegreen;
+  background-position: center;
+  background-size: cover;
 }
 
 .drink-card {
@@ -11,6 +12,7 @@ body {
   align-items: center;
   margin: 0 auto;
   border-radius: 25px;
+  opacity: .93;
 }
 
 #textInput {
@@ -38,7 +40,7 @@ body {
   font-size: 34px;
   color: black;
   display: flex;
-  position: start;
+  position: absolute;
   margin: -500px 0px 0px -400px;
 }
 
@@ -47,63 +49,63 @@ body {
   height: 250px;
   border: 3px solid black;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: -200px 0px 0px -400px;
 }
 
 .ingredients1 {
   font-size: 30px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: -400px 0px 0px 100px;
 }
 
 .ingredients2 {
   font-size: 30px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: -320px 0px 0px 100px;
 }
 
 .ingredients3 {
   font-size: 30px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: -240px 0px 0px 100px;
 }
 
 .ingredients4 {
   font-size: 30px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: -160px 0px 0px 100px;
 }
 
 .ingredients5 {
   font-size: 30px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: -80px 0px 0px 100px;
 }
 
 .ingredients6 {
   font-size: 30px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: 0px 0px 0px 100px;
 }
 
 .ingredients7 {
   font-size: 30px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: 80px 0px 0px 100px;
 }
 
 .ingredients8 {
   font-size: 30px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: 160px 0px 0px 100px;
 }
 
@@ -112,11 +114,16 @@ body {
   font-size: 25px;
   width: 660px;
   display: flex;
-  position: fixed;
+  position: absolute;
   margin: 240px 0px 0px 20px;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 300px) and (max-width:550px) {
+
+  body {
+    background-position: center;
+    background-size: cover;
+  }
 
   .drink-card {
     width: 500px;
@@ -124,8 +131,9 @@ body {
     background-color: blueviolet;
     display: flex;
     position: absolute;
-    margin: 0px 0px 0px -10px;
+    margin: -0px 0px 0px -10px;
     border-radius: 25px;
+    opacity: .93;
   }
   .drink-picture {
     width: 175px;
@@ -133,70 +141,70 @@ body {
     border: 2px solid black;
     display: flex;
     justify-content: center;
-    margin: 50px 0px 0px 20px;
+    margin: -250px 0px 0px -250px;
   }
   .drink-name {
     font-size: 40px;
     color: black;
     display: flex;
     position: absolute;
-    margin: 0px 0px 0px 20px;
+    margin: -490px 0px 0px -100px;
   }
 
   .ingredients1 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 50px 0px 0px 220px;
+    margin: -390px 0px 0px 220px;
   }
   
   .ingredients2 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 80px 0px 0px 220px;
+    margin: -330px 0px 0px 220px;
   }
   
   .ingredients3 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 110px 0px 0px 220px;
+    margin: -270px 0px 0px 220px;
   }
   
   .ingredients4 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 140px 0px 0px 220px;
+    margin: -210px 0px 0px 220px;
   }
   
   .ingredients5 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 170px 0px 0px 220px;
+    margin: -150px 0px 0px 220px;
   }
   
   .ingredients6 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 200px 0px 0px 220px;
+    margin: -90px 0px 0px 220px;
   }
   
   .ingredients7 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 230px 0px 0px 220px;
+    margin: -30px 0px 0px 220px;
   }
   
   .ingredients8 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 260px 0px 0px 220px;
+    margin: 30px 0px 0px 220px;
   }
 
   .instructions {
@@ -204,7 +212,7 @@ body {
     width: 490px;
     display: flex;
     position: absolute;
-    margin: 250px 0px 0px 20px;
+    margin: 100px 0px 0px 20px;
   }
 
   #textInput {
@@ -227,14 +235,21 @@ body {
 
 @media (min-width: 740px) and (max-width: 912px) {
 
+  body {
+    background-position: center;
+    background-size: cover;
+  }
+  
   .drink-card {
     width: 700px;
     height: 750px;
     background-color: blueviolet;
     display: flex;
-    position: absolute;
-    margin: 0px 0px 0px 100px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     border-radius: 25px;
+    opacity: .93;
   }
   .drink-picture {
     width: 200px;
@@ -242,70 +257,70 @@ body {
     border: 3px solid black;
     display: flex;
     justify-content: center;
-    margin: 50px 0px 0px 20px;
+    margin: -400px 0px 0px -400px;
   }
   .drink-name {
-    font-size: 40px;
+    font-size: 35px;
     color: black;
     display: flex;
     position: absolute;
-    margin: 0px 0px 0px 20px;
+    margin: -670px 0px 0px -400px;
   }
 
   .ingredients1 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 50px 0px 0px 240px;
+    margin: -550px 0px 0px 50px;
   }
   
   .ingredients2 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 80px 0px 0px 240px;
+    margin: -480px 0px 0px 50px;
   }
   
   .ingredients3 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 110px 0px 0px 240px;
+    margin: -410px 0px 0px 50px;
   }
   
   .ingredients4 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 140px 0px 0px 240px;
+    margin: -340px 0px 0px 50px;
   }
   
   .ingredients5 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 170px 0px 0px 240px;
+    margin: -270px 0px 0px 50px;
   }
   
   .ingredients6 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 200px 0px 0px 240px;
+    margin: -200px 0px 0px 50px;
   }
   
   .ingredients7 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 230px 0px 0px 240px;
+    margin: -130px 0px 0px 50px;
   }
   
   .ingredients8 {
     font-size: 30px;
     display: flex;
     position: absolute;
-    margin: 260px 0px 0px 240px;
+    margin: -60px 0px 0px 50px;
   }
 
   .instructions {
@@ -313,12 +328,14 @@ body {
     width: 675px;
     display: flex;
     position: absolute;
-    margin: 275px 0px 0px 20px;
+    margin: 0px 0px 0px 20px;
   }
 
   #textInput {
     display: flex;
-    position: inherit;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     width: 200px;
     height: 30px;
     border-radius: 20px;
@@ -326,6 +343,10 @@ body {
   }
 
   #submitButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     width: 110px;
     height: 40px;
     border-radius: 20px;
