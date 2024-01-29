@@ -1,0 +1,9 @@
+.home-button{
+  height: 50px;
+  width: 50px;
+  background: none;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin: 0px 0px 0px 40px;
+}
