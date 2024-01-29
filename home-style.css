@@ -46,3 +46,17 @@ h1 {
   border-radius: 20px;
   font-size: 17px;
 }
+
+.drink-list {
+  font-size: 30px;
+  color: blueviolet;
+  column-count: 2;
+  column-gap: 20px;
+  display: block;
+  
+}
+
+.drink-list a {
+  display: block;
+  margin-bottom: 10px;
+}

@@ -3,46 +3,35 @@ const button = document.querySelector('#submitButton')
 const textBox = document.querySelector('#textInput')
 const drinkPic = document.querySelector('.drink-picture')
 const drinkName = document.querySelector('.drink-name')
-const ingredient1 = document.querySelector('.drink1')
-const ingredient2 = document.querySelector('.drink2')
-const ingredient3 = document.querySelector('.drink3')
-const ingredient4 = document.querySelector('.drink4')
 
+const ingredients = Array.from({ length: 20 }, (_, index) =>
+  document.querySelector(`.drink${index + 1}`)
+);
 
 button.addEventListener('click', async () => {
-  const ingredientName = document.querySelector('#textInput').value
-  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${ingredientName}`)
-  let drink1 = response.data.drinks[0].strDrink
-  let drink2 = response.data.drinks[0].strDrink
-  let drink3 = response.data.drinks[0].strDrink
-  let drink4 = response.data.drinks[0].strDrink
+  const ingredientName = document.querySelector('#textInput').value;
+  let response = await axios.get(
+    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredientName}`
+  );
 
+  // Clear previous content
+  ingredients.forEach((element) => (element.innerHTML = ''));
 
-  ingredient1.innerHTML = drink1
-  ingredient2.innerHTML = drink2
-  ingredient3.innerHTML = drink3
-  ingredient4.innerHTML = drink4
+  for (let i = 0; i < Math.min(20, response.data.drinks.length); i++) {
+    // Use different variables for each drink
+    let drink = response.data.drinks[i].strDrink;
 
-   for (let i = 0; i < response.data.drinks[0].length; i++) {
-      if (response.data.drinks[0].strIngredients1 === ingredientName) {
-        ingredient.textContent += response.data.drinks[0].strDrink + ', '
-      } else {
-          ingredient.textContent = ''
-      }
-    }
+    // Append the drink to the respective element
+    ingredients[i].innerHTML += drink + ', ';
+  }
 
-  // const liquorName = ['vodka', 'whiskey', 'bourbon', 'gin', 'tequilla']
-  // let drinkDescription = ''
-  // drinkDescription = response.data.drinks[0].strIngredient1
+  // Remove the trailing comma and space for each element
+  ingredients.forEach(
+    (element) => (element.innerHTML = element.innerHTML.slice(0, -2))
+  );
+});
 
-  // switch(drinkDescription) {
-  //   case 'vodka':
-
-  // }
-
-})
-
-
+// ingredient.innerHTML = ''
 
 
 
@@ -52,10 +41,24 @@ button.addEventListener('click', async () => {
     }
   })
 
-  // for (let i = 0; i < response.data.drinks[0].length; i++) {
-    //   if (response.data.drinks[0].strIngredients1 === ingredientName) {
-    //     ingredient.textContent += response.data.drinks[0].strDrink + ', '
-    //   } else {
-    //       ingredient.textContent = ''
-    //   }
-    // }
+  // for (let i = 0; i < response.data.drinks[0].strDrink.length; i++) {
+  //   if (response.data.drinks[0].strIngredients1 === ingredientName) {
+  //     ingredient1.innerHTML += response.data.drinks[0].strDrink + ', '
+  //   } else if (response.data.drinks[0].strIngredients1 === ingredientName) {
+  //     ingredient2.innerHTML += response.data.drinks[0].strDrink + ', '
+  //   } else {
+  //     ingredient.innerHTML = ''
+  //   }
+  //  }
+
+  // const liquorName = ['vodka', 'whiskey', 'bourbon', 'gin', 'tequilla']
+  // let drinkDescription = ''
+  // drinkDescription = response.data.drinks[0].strIngredient1
+
+  // switch(drinkDescription) {
+  //   case 'vodka':
+  //     ingredient.innerHTML += response.data.drinks[0].strDrink + ', '
+  //     break;
+  //   default:
+  //     ingredient.innerHTML += ''
+  // }
