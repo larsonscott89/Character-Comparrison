@@ -22,7 +22,6 @@ const ingredientsEight = document.querySelector('.ingredients8')
 button.addEventListener('click', async () => {
   const cocktailName = document.querySelector('#textInput').value
   let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`)
-  console.log(response)
 
   let drink = response.data.drinks[0].strDrink
   let picture = response.data.drinks[0].strDrinkThumb
