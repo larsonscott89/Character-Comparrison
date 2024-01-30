@@ -48,10 +48,7 @@ button.addEventListener('click', async () => {
   ingredientsSix.innerHTML = ingredient6
   ingredientsSeven.innerHTML = ingredient7
   ingredientsEight.innerHTML = ingredient8
-
-  // if (response.data.drinks[0].strIngredient3 === null) {
-  //   response.data.drinks[0].strIngredient3 = ''
-  // }
+  
 })
 
 
@@ -62,3 +59,5 @@ textBox.addEventListener('keydown', function (event) {
     button.click()
   }
 })
+
+
