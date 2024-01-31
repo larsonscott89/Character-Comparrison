@@ -1,3 +1,4 @@
+
 const apiKey = '1'
 const button = document.querySelector('#submitButton')
 const textBox = document.querySelector('#textInput')
@@ -14,31 +15,20 @@ button.addEventListener('click', async () => {
     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredientName}`
   );
 
-
   ingredients.forEach((element) => (element.innerHTML = ''));
 
-  for (let i = 0; i < Math.min(20, response.data.drinks.length); i++) {
- 
+  for (let i = 0; i < Math.min(20, response.data.drinks.length); i++) {  
     let drink = response.data.drinks[i].strDrink;
-
- 
     ingredients[i].innerHTML += drink + ', ';
   }
-
 
   ingredients.forEach(
     (element) => (element.innerHTML = element.innerHTML.slice(0, -2))
   );
 });
 
-// addEventListener for click for when you click on a drink in the list it would pull it up on the second
-
-
-
   textBox.addEventListener('keydown', function (event) {
     if (event.keyCode == 13) {
       button.click()
     }
   })
-
- 
