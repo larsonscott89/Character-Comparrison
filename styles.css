@@ -59,6 +59,10 @@ h1 {
   font-size: 17px;
 }
 
+.drink-list {
+  opacity: 0;
+}
+
 .drink-name {
   font-size: 34px;
   color: black;
