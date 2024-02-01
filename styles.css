@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-  color: beige;
+  color: blueviolet;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -38,6 +38,10 @@ h1 {
 }
 
 #textInput {
+  font-family: Philosopher, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  -webkit-text-fill-color: azure;
+  color: azure;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,10 +52,13 @@ h1 {
   border-radius: 20px;
   background-color: blueviolet;
   opacity: .95;
-  
 }
 
 #ingredientInput {
+  font-family: Philosopher, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  -webkit-text-fill-color: azure;
+  color: azure;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,6 +72,7 @@ h1 {
 }
 
 #submitButton {
+  font-family: Philosopher, Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,6 +90,7 @@ h1 {
 }
 
 #button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8, #button9, #button10, #button11, #button12, #button13, #button14, #button15, #button16, #button17, #button18, #button19, #button20, #button21, #button22, #button23, #button24, #button25, #button26, #button27, #button28, #button29, #button30, #button31, #button32, #button33, #button34, #button35, #button36, #button37, #button38, #button39, #button40, #button41, #button42, #button43, #button44, #button45, #button46, #button47, #button48, #button49, #button50, #button51, #button52, #button53, #button54, #button55, #button56, #button57, #button58, #button59, #button60, #button61, #button62, #button63, #button64, #button65, #button66, #button67, #button68, #button69, #button70 {
+  font-family: Philosopher, Arial, Helvetica, sans-serif;
   background-color: blueviolet;
   height: 35px;
   font-size: 17px;
