@@ -6,7 +6,6 @@ const drinkBox = document.querySelector('#textInput')
 const drinkPic = document.querySelector('.drink-picture')
 const drinkName = document.querySelector('.drink-name')
 const instructions = document.querySelector('.instructions')
-const testButton = document.querySelector('#test')
 const allButtons = document.querySelectorAll('.drink-button')
 
 const ingredientsOne = document.querySelector('.ingredients1')
@@ -18,6 +17,47 @@ const ingredientsSix = document.querySelector('.ingredients6')
 const ingredientsSeven = document.querySelector('.ingredients7')
 const ingredientsEight = document.querySelector('.ingredients8')
 
+const ingredients = Array.from({ length: 70 }, (_, index) =>
+  document.querySelector(`#button${index + 1}`)
+);
+
+button.addEventListener('click', async () => {
+  const ingredientName = document.querySelector('#ingredientInput').value
+  let response = await axios.get(
+    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredientName}`
+  )
+
+  ingredients.forEach((element, index) => {
+    if (element && element.innerHTML !== undefined) {
+      element.innerHTML = ''
+    } else if (button.innerHTML === '') {
+      button.style.opacity = '0'
+    } else {
+      button.style.opacity = '.95'
+    }
+  })
+
+  for (let i = 0; i < Math.min(70, response.data.drinks.length); i++) {
+    let drink = response.data.drinks[i].strDrink
+    ingredients[i].innerHTML += drink + ', '
+  }
+
+  ingredients.forEach((element) => (element.innerHTML = element.innerHTML.slice(0, -2)))
+
+  for (let button of allButtons) {
+    if (button.innerHTML === '') {
+      button.style.opacity = '0'
+    } else {
+      button.style.opacity = '.95'
+    }
+  }
+})
+
+textBox.addEventListener('keydown', function (event) {
+  if (event.keyCode == 13) {
+    button.click()
+  }
+})
 
 button.addEventListener('click', async () => {
   const cocktailName = document.querySelector('#textInput').value
@@ -55,48 +95,7 @@ button.addEventListener('click', async () => {
     } else {
       button.style.opacity = '.95'
     }
-  }
-  
-})
-
-drinkBox.addEventListener('keydown', function (event) {
-  if (event.keyCode == 13) {
-    button.click()
-  }
-})
-
-const ingredients = Array.from({ length: 70 }, (_, index) =>
-  document.querySelector(`#button${index + 1}`)
-);
-
-button.addEventListener('click', async () => {
-  const ingredientName = document.querySelector('#ingredientInput').value
-  let response = await axios.get(
-    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredientName}`
-  )
-
-  ingredients.forEach((element, index) => {
-    if (element && element.innerHTML !== undefined) {
-      element.innerHTML = ''
-    } else {
-      console.error(`Element at index ${index} is undefined or has no innerHTML property.`)
-    }
-  })
-
-  for (let i = 0; i < Math.min(70, response.data.drinks.length); i++) {
-    let drink = response.data.drinks[i].strDrink
-    ingredients[i].innerHTML += drink + ', '
-  }
-
-  ingredients.forEach((element) => (element.innerHTML = element.innerHTML.slice(0, -2)))
-
-  for (let button of allButtons) {
-    if (button.innerHTML === '') {
-      button.style.opacity = '0'
-    } else {
-      button.style.opacity = '.95'
-    }
-  }
+  } 
 })
 
 const button1 = document.querySelector('.drink1')
@@ -2411,7 +2410,7 @@ button70.addEventListener('click', async () => {
   
 })
 
-textBox.addEventListener('keydown', function (event) {
+drinkBox.addEventListener('keydown', function (event) {
   if (event.keyCode == 13) {
     button.click()
   }
