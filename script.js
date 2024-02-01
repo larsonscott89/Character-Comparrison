@@ -7,6 +7,7 @@ const drinkPic = document.querySelector('.drink-picture')
 const drinkName = document.querySelector('.drink-name')
 const instructions = document.querySelector('.instructions')
 const testButton = document.querySelector('#test')
+const allButtons = document.querySelectorAll('.drink-button')
 
 const ingredientsOne = document.querySelector('.ingredients1')
 const ingredientsTwo = document.querySelector('.ingredients2')
@@ -49,7 +50,6 @@ button.addEventListener('click', async () => {
   ingredientsEight.innerHTML = ingredient8
 
   for (let button of allButtons) {
-    console.log(button.innerHTML)
     if (button.innerHTML === '') {
       button.style.opacity = '0'
     } else {
@@ -65,33 +65,32 @@ drinkBox.addEventListener('keydown', function (event) {
   }
 })
 
-const ingredients = Array.from({ length: 50 }, (_, index) =>
+const ingredients = Array.from({ length: 70 }, (_, index) =>
   document.querySelector(`#button${index + 1}`)
 );
 
 button.addEventListener('click', async () => {
-  const ingredientName = document.querySelector('#ingredientInput').value;
+  const ingredientName = document.querySelector('#ingredientInput').value
   let response = await axios.get(
     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredientName}`
   )
 
   ingredients.forEach((element, index) => {
     if (element && element.innerHTML !== undefined) {
-      element.innerHTML = '';
+      element.innerHTML = ''
     } else {
-      console.error(`Element at index ${index} is undefined or has no innerHTML property.`);
+      console.error(`Element at index ${index} is undefined or has no innerHTML property.`)
     }
   })
 
-  for (let i = 0; i < Math.min(50, response.data.drinks.length); i++) {
-    let drink = response.data.drinks[i].strDrink;
-    ingredients[i].innerHTML += drink + ', ';
+  for (let i = 0; i < Math.min(70, response.data.drinks.length); i++) {
+    let drink = response.data.drinks[i].strDrink
+    ingredients[i].innerHTML += drink + ', '
   }
 
   ingredients.forEach((element) => (element.innerHTML = element.innerHTML.slice(0, -2)))
 
   for (let button of allButtons) {
-    console.log(button.innerHTML)
     if (button.innerHTML === '') {
       button.style.opacity = '0'
     } else {
@@ -99,21 +98,12 @@ button.addEventListener('click', async () => {
     }
   }
 })
-const allButtons = document.querySelectorAll('.drink-button')
+
 const button1 = document.querySelector('.drink1')
+
 button1.addEventListener('click', async () => {
   const drinkButton = document.querySelector('#button1')
   let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
-
-// for (let button of allButtons) {
-//   if (button.innerHTML === '') {
-//     button.style.opacity = '0'
-//   } else {
-//     button.style.opacity = '1'
-//   }
-
-// }
-
   let drink = response.data.drinks[0].strDrink
   let picture = response.data.drinks[0].strDrinkThumb
   let info = response.data.drinks[0].strInstructions
@@ -1732,6 +1722,666 @@ const button50 = document.querySelector('.drink50')
 
 button50.addEventListener('click', async () => {
   const drinkButton = document.querySelector('#button50')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button51 = document.querySelector('.drink51')
+
+button51.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button51')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button52 = document.querySelector('.drink52')
+
+button52.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button52')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button53 = document.querySelector('.drink53')
+
+button53.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button53')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button54 = document.querySelector('.drink54')
+
+button54.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button54')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button55 = document.querySelector('.drink55')
+
+button55.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button55')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button56 = document.querySelector('.drink56')
+
+button56.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button56')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button57 = document.querySelector('.drink57')
+
+button57.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button57')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button58 = document.querySelector('.drink58')
+
+button58.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button58')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button59 = document.querySelector('.drink59')
+
+button59.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button59')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button60 = document.querySelector('.drink60')
+
+button60.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button60')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button61 = document.querySelector('.drink61')
+
+button61.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button61')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button62 = document.querySelector('.drink62')
+
+button62.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button62')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button63 = document.querySelector('.drink63')
+
+button63.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button63')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button64 = document.querySelector('.drink64')
+
+button64.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button64')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button65 = document.querySelector('.drink65')
+
+button65.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button65')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button66 = document.querySelector('.drink66')
+
+button66.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button66')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button67 = document.querySelector('.drink67')
+
+button67.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button67')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button68 = document.querySelector('.drink68')
+
+button68.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button68')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button69 = document.querySelector('.drink69')
+
+button69.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button69')
+  let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+  let drink = response.data.drinks[0].strDrink
+  let picture = response.data.drinks[0].strDrinkThumb
+  let info = response.data.drinks[0].strInstructions
+
+  let ingredient1 = response.data.drinks[0].strIngredient1
+  let ingredient2 = response.data.drinks[0].strIngredient2
+  let ingredient3 = response.data.drinks[0].strIngredient3
+  let ingredient4 = response.data.drinks[0].strIngredient4
+  let ingredient5 = response.data.drinks[0].strIngredient5
+  let ingredient6 = response.data.drinks[0].strIngredient6
+  let ingredient7 = response.data.drinks[0].strIngredient7
+  let ingredient8 = response.data.drinks[0].strIngredient8
+
+  instructions.innerHTML = info
+  drinkName.innerHTML = drink
+  drinkPic.innerHTML = `<img src='${picture}/preview'/>`
+
+  ingredientsOne.innerHTML = ingredient1
+  ingredientsTwo.innerHTML = ingredient2
+  ingredientsThree.innerHTML = ingredient3
+  ingredientsFour.innerHTML = ingredient4
+  ingredientsFive.innerHTML = ingredient5
+  ingredientsSix.innerHTML = ingredient6
+  ingredientsSeven.innerHTML = ingredient7
+  ingredientsEight.innerHTML = ingredient8
+  
+})
+
+const button70 = document.querySelector('.drink70')
+
+button70.addEventListener('click', async () => {
+  const drinkButton = document.querySelector('#button70')
   let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
   let drink = response.data.drinks[0].strDrink
   let picture = response.data.drinks[0].strDrinkThumb
