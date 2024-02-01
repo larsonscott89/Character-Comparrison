@@ -5,6 +5,7 @@ const textBox = document.querySelector('#textInput')
 const drinkPic = document.querySelector('.drink-picture')
 const drinkName = document.querySelector('.drink-name')
 const instructions = document.querySelector('.instructions')
+const testButton = document.querySelector('#test')
 
 const ingredientsOne = document.querySelector('.ingredients1')
 const ingredientsTwo = document.querySelector('.ingredients2')
@@ -56,7 +57,7 @@ button.addEventListener('click', async () => {
   const ingredientName = document.querySelector('#textInput').value;
   let response = await axios.get(
     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredientName}`
-  );
+  )
 
   ingredients.forEach((element, index) => {
     if (element && element.innerHTML !== undefined) {
@@ -64,21 +65,39 @@ button.addEventListener('click', async () => {
     } else {
       console.error(`Element at index ${index} is undefined or has no innerHTML property.`);
     }
-  });
+  })
 
   for (let i = 0; i < Math.min(50, response.data.drinks.length); i++) {
     let drink = response.data.drinks[i].strDrink;
     ingredients[i].innerHTML += drink + ', ';
   }
 
-  ingredients.forEach((element) => (element.innerHTML = element.innerHTML.slice(0, -2)));
-});
+  ingredients.forEach((element) => (element.innerHTML = element.innerHTML.slice(0, -2)))
 
+  for (let button of allButtons) {
+    console.log(button.innerHTML)
+    if (button.innerHTML === '') {
+      button.style.opacity = '0'
+    } else {
+      button.style.opacity = '1'
+    }
+  }
+})
+const allButtons = document.querySelectorAll('.drink-button')
 const button1 = document.querySelector('.drink1')
-
 button1.addEventListener('click', async () => {
   const drinkButton = document.querySelector('#button1')
   let response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkButton.innerText}`)
+
+// for (let button of allButtons) {
+//   if (button.innerHTML === '') {
+//     button.style.opacity = '0'
+//   } else {
+//     button.style.opacity = '1'
+//   }
+
+// }
+
   let drink = response.data.drinks[0].strDrink
   let picture = response.data.drinks[0].strDrinkThumb
   let info = response.data.drinks[0].strInstructions
@@ -181,6 +200,7 @@ button4.addEventListener('click', async () => {
   let drink = response.data.drinks[0].strDrink
   let picture = response.data.drinks[0].strDrinkThumb
   let info = response.data.drinks[0].strInstructions
+  
 
   let ingredient1 = response.data.drinks[0].strIngredient1
   let ingredient2 = response.data.drinks[0].strIngredient2
@@ -203,7 +223,7 @@ button4.addEventListener('click', async () => {
   ingredientsSix.innerHTML = ingredient6
   ingredientsSeven.innerHTML = ingredient7
   ingredientsEight.innerHTML = ingredient8
-  
+
 })
 
 const button5 = document.querySelector('.drink5')
@@ -236,7 +256,7 @@ button5.addEventListener('click', async () => {
   ingredientsSix.innerHTML = ingredient6
   ingredientsSeven.innerHTML = ingredient7
   ingredientsEight.innerHTML = ingredient8
-  
+
 })
 
 const button6 = document.querySelector('.drink6')
@@ -302,6 +322,7 @@ button7.addEventListener('click', async () => {
   ingredientsSix.innerHTML = ingredient6
   ingredientsSeven.innerHTML = ingredient7
   ingredientsEight.innerHTML = ingredient8
+
   
 })
 
@@ -335,7 +356,7 @@ button8.addEventListener('click', async () => {
   ingredientsSix.innerHTML = ingredient6
   ingredientsSeven.innerHTML = ingredient7
   ingredientsEight.innerHTML = ingredient8
-  
+
 })
 
 const button9 = document.querySelector('.drink9')
@@ -401,6 +422,7 @@ button10.addEventListener('click', async () => {
   ingredientsSix.innerHTML = ingredient6
   ingredientsSeven.innerHTML = ingredient7
   ingredientsEight.innerHTML = ingredient8
+
   
 })
 
@@ -1728,5 +1750,4 @@ textBox.addEventListener('keydown', function (event) {
     button.click()
   }
 })
-
 

@@ -60,8 +60,18 @@ h1 {
 }
 
 .drink-list {
+  color: blueviolet;
+}
+
+#button1, #button2, #button3, #button4, #button5, #button6, #button7, #button8, #button9, #button10, #button11, #button12, #button13, #button14, #button15, #button16, #button17, #button18, #button19, #button20, #button21, #button22, #button23, #button24, #button25, #button26, #button27, #button28, #button29, #button30, #button31, #button32, #button33, #button34, #button35, #button36, #button37, #button38, #button39, #button40, #button41, #button42, #button43, #button44, #button45, #button46, #button47, #button48, #button49, #button50 {
+  background-color: blueviolet;
+  height: 35px;
+  font-size: 17px;
+  border-radius: 18px;
   opacity: 0;
 }
+
+
 
 .drink-name {
   font-size: 34px;
