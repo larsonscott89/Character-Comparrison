@@ -32,6 +32,8 @@ button.addEventListener('click', async () => {
       element.innerHTML = ''
     } else if (button.innerHTML === '') {
       button.style.opacity = '0'
+      button.style.width = '0'
+      button.style.height = '0'
     } else {
       button.style.opacity = '.95'
     }
