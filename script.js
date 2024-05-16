@@ -7,6 +7,7 @@ const drinkPic = document.querySelector('.drink-picture')
 const drinkName = document.querySelector('.drink-name')
 const instructions = document.querySelector('.instructions')
 const allButtons = document.querySelectorAll('.drink-button')
+const homeButton = document.querySelector('.home-button')
 
 const ingredientsOne = document.querySelector('.ingredients1')
 const ingredientsTwo = document.querySelector('.ingredients2')
@@ -20,6 +21,11 @@ const ingredientsEight = document.querySelector('.ingredients8')
 const ingredients = Array.from({ length: 70 }, (_, index) =>
   document.querySelector(`#button${index + 1}`)
 );
+
+function handleClick() {
+  window.location.reload()
+}
+homeButton.addEventListener('click', handleClick)
 
 button.addEventListener('click', async () => {
   const ingredientName = document.querySelector('#ingredientInput').value
